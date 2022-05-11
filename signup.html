@@ -48,12 +48,12 @@
         const checkResult = document.getElementById("userId-check-result");
         const exp = /^[a-z\d-_]{5,20}$/;
         if(userId.match(exp)){
-            checkResult.innerHTML = "아이디 사용가능";
+            checkResult.innerHTML = "사용가능한 아이디입니다.";
             checkResult.style.color = "green";
         }
         else{
             if(userId.length == 0){
-            checkResult.innerHTML = "필수입력입니다.";
+            checkResult.innerHTML = "필수입력 정보입니다.";
             checkResult.style.color = "red";
             }
             else{
@@ -65,7 +65,7 @@
 
     function userpw1Check() {
         const userpw1 = document.getElementById("userpw1").value;
-        const exp = /^([a-z\d-_!#$A-Z]{8,16}$/;
+        const exp = /^[a-z\d-_!#$A-Z]{8,16}$/;
         const checkResult = document.getElementById("userpw1-check-result");
         if(userpw1.match(exp)) {
             checkResult.innerHTML = "사용가능한 비밀번호입니다.";
@@ -73,13 +73,30 @@
         }
         else{
             if(userpw1.length == 0){
-            checkResult.innerHTML = "필수입력입니다.";
+            checkResult.innerHTML = "필수입력 정보입니다.";
             checkResult.style.color = "red";
             }
             else{
                 checkResult.innerHTML = "8~16글자의 영문 대소문자, 숫자와 특수기호(-,_,!,#.$)만 사용 가능 합니다.";
                 checkResult.style.color = "red";
             }
+        }
+    }
+    function userpw2Check(){
+       const userpw1 = document.getElementById("userpw1").value;
+       const userpw2 = document.getElementById("userpw2").value;
+       const checkResult = document.getElementById("userpw2-check-result");
+       if(userpw1 == userpw2){
+           checkResult.innerHTML = "비밀번호가 일치합니다.";
+           checkResult.style.color = "green";
+       } 
+       else{
+           if(userpw2.length == 0){
+               checkResult.innerHTML = "필수입력 정보입니다.";
+               checkResult.style.color = "red";
+           }
+           checkResult.innerHTML = "비밀번호가 일치하지 않습니다."
+           checkResult.style.color = "red";
         }
     }
     
