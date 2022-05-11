@@ -15,37 +15,38 @@
     <input type="text" id="userId" onblur="userIdCheck()">
     <p id="userId-check-result"></p>
     비밀번호<br>
-    <input type="password" id="userpassword1" onblur="userpassword1()">
-    <p id="check-userpassword1"></p>
+    <input type="password" id="userpw1" onblur="userpw1Check()">
+    <p id="userpw1-check-result"></p>
     비밀번호 재확인<br>
-    <input type="password" id="userpassword2" onblur="userpassword2()"><br>
-    <p id="check-userpassword2"></p>
+    <input type="password" id="userpw2" onblur="userpw2Check()">
+    <p id="userpw2-check-result"></p>
     이름<br>
-    <input type="text" id="name" onblur="nameCheck()"><br>
-    <p id="check-username"></p>
+    <input type="text" id="name" onblur="nameCheck()">
+    <p id="username-check-result"></p>
     생년월일<br>
-    <input type="text" id="birth" onblur="birthCheck()"><br>
-    <p id="check-userbirth"></p>
+    <input type="text" id="birth" onblur="birthCheck()">
+    <p id="userbirth-check-result"></p>
     성별<br>
     <select id ="gender">
-        <option value="성별">성별</option>
+        <option value=" ">성별</option>
         <option value="남자">남자</option>
         <option value="여자">여자</option>
     </select>
-    <p id="check-usergender"></p>
+    <input type="text" id="gender">
+    <p id="usergender-check-result"></p>
     본인 확인 이메일<br>
     <input type="text" id="email"><br>
-    <p id="check-useremail"></p>
+    <p id="useremail-check-result"></p>
     휴대전화<br>
     <input type="text" id="mobile" onblur="mobileCheck"><br>
-    <p id="check-usermobile"></p>
+    <p id="usermobile-check-result"></p>
     </div> 
 </body>
 <script>
-    function usernameCheck(){
+    function userIdCheck(){
         const userId = document.getElementById("userId").value;
         const checkResult = document.getElementById("userId-check-result");
-        const exp = /^(?=.*[a-z])(?=.*\d)(?=.*[-_])[a-z\d-_]{5,20}$/;
+        const exp = /^[a-z\d-_]{5,20}$/;
         if(userId.match(exp)){
             checkResult.innerHTML = "아이디 사용가능";
             checkResult.style.color = "green";
@@ -62,21 +63,22 @@
         }
     }
 
-    function userpassword1() {
-        const userpassword1 = document.getElementById("userpassword1").value;
-        const exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_!#$])[a-z\d-_!#$A-Z]{8,16}$/;
-        const checkUserpassword1 = document.getElementById("check-userpassword1");
-        if(userpassword1.match(exp)){
-            console.log("일치");
-            checkUserpassword1.innerHTML = "사용가능한 비밀번호입니다.";
+    function userpw1Check() {
+        const userpw1 = document.getElementById("userpw1").value;
+        const exp = /^([a-z\d-_!#$A-Z]{8,16}$/;
+        const checkResult = document.getElementById("userpw1-check-result");
+        if(userpw1.match(exp)) {
+            checkResult.innerHTML = "사용가능한 비밀번호입니다.";
+            checkResult.style.color = "green";
         }
         else{
-            if(userpassword1.length == 0){
-            checkUserpassword1.innerHTML = "필수입력입니다.";
-            checkUserpassword1.style.color = "red";
+            if(userpw1.length == 0){
+            checkResult.innerHTML = "필수입력입니다.";
+            checkResult.style.color = "red";
             }
             else{
-                checkUserpassword1.innerHTML = "";
+                checkResult.innerHTML = "8~16글자의 영문 대소문자, 숫자와 특수기호(-,_,!,#.$)만 사용 가능 합니다.";
+                checkResult.style.color = "red";
             }
         }
     }
