@@ -21,24 +21,24 @@
     <input type="password" id="userpw2" onblur="userpw2Check()">
     <p id="userpw2-check-result"></p>
     이름<br>
-    <input type="text" id="name" onblur="nameCheck()">
+    <input type="text" id="username" onblur="usernameCheck()">
     <p id="username-check-result"></p>
     생년월일<br>
-    <input type="text" id="birth" onblur="birthCheck()">
+    <input type="text" id="userbirth1" onblur="userbirthCheck1()">
+    - <input type="text" id="userbirth2" onblur="userbirthCheck2()">
+    - <input type="text" id="userbirth3" onblur="userbirthCheck3()">
     <p id="userbirth-check-result"></p>
     성별<br>
-    <select id ="gender">
+    <select id ="usergender" onchange="usergenderSelect()">
         <option value=" ">성별</option>
         <option value="남자">남자</option>
         <option value="여자">여자</option>
-    </select>
-    <input type="text" id="gender">
-    <p id="usergender-check-result"></p>
+    </select><br>
     본인 확인 이메일<br>
-    <input type="text" id="email"><br>
+    <input type="text" id="useremail" onblur="useremailCheck()">
     <p id="useremail-check-result"></p>
-    휴대전화<br>
-    <input type="text" id="mobile" onblur="mobileCheck"><br>
+    휴대전화(숫자로 'OOO-OOOO-OOOO' 형식으로 입력하세요.)<br>
+    <input type="text" id="usermobile" onblur="usermobileCheck()">
     <p id="usermobile-check-result"></p>
     </div> 
 </body>
@@ -53,7 +53,7 @@
         }
         else{
             if(userId.length == 0){
-            checkResult.innerHTML = "필수입력 정보입니다.";
+            checkResult.innerHTML = "필수 입력입니다.";
             checkResult.style.color = "red";
             }
             else{
@@ -73,7 +73,7 @@
         }
         else{
             if(userpw1.length == 0){
-            checkResult.innerHTML = "필수입력 정보입니다.";
+            checkResult.innerHTML = "필수 입력입니다.";
             checkResult.style.color = "red";
             }
             else{
@@ -92,13 +92,111 @@
        } 
        else{
            if(userpw2.length == 0){
-               checkResult.innerHTML = "필수입력 정보입니다.";
+               checkResult.innerHTML = "필수 입력입니다.";
                checkResult.style.color = "red";
            }
            checkResult.innerHTML = "비밀번호가 일치하지 않습니다."
            checkResult.style.color = "red";
         }
     }
-    
+    function usernameCheck(){
+        const username = document.getElementById("username").value;
+        const checkResult = document.getElementById("username-check-result");
+        const exp = /^[a-z|A-Z|ㄱ-ㅎ|가-힣]+$/
+        if(username.match(exp)){
+            checkResult.innerHTML = " ";
+        }
+        else{
+            if(username.length == 0){
+                checkResult.innerHTML = "필수 입력입니다.";
+                checkResult.style.color = "red";
+            }
+            else{
+                checkResult.innerHTML = "한글과 영문 대 소문자를 사용하세요.(특수기호,공백,숫자 사용 불가)"
+                checkResult.style.color = "red";
+            }
+        }
+    }
+    function userbirthCheck1(){
+        const userbirth1 = document.getElementById("userbirth1").value;
+        const checkResult = document.getElementById("userbirth-check-result"); 
+        const exp =  /^\d{4}$/;
+        if(userbirth1.match(exp)){
+            checkResult.innerHTML = " ";
+        }
+        else{
+            if(userbirth1.length == 0){
+                checkResult.innerHTML = "필수 입력입니다.";
+                checkResult.style.color = "red";
+            }
+            else{
+                checkResult.innerHTML = "첫번째 입력란에 태어난 년도 4자리를 입력하세요";
+                checkResult.style.color = "red";
+            }
+        }
+    }
+    function userbirthCheck2(){
+        const userbirth2 = document.getElementById("userbirth2").value;
+        const checkResult = document.getElementById("userbirth-check-result"); 
+        const exp =  /^\d{2}$/;
+        if(userbirth2.match(exp) && userbirth2>0 && userbirth2<13){
+            checkResult.innerHTML = " ";
+        }
+        else{
+            if(userbirth2.length == 0){
+                checkResult.innerHTML = "필수 입력입니다.";
+                checkResult.style.color = "red";
+            }
+            else{
+                checkResult.innerHTML = "두번째 입력란에 1~12 사이의 숫자를 두자릿수로 입력하세요.";
+                checkResult.style.color = "red";
+            }
+        }
+    }
+    function userbirthCheck3(){
+        const userbirth3 = document.getElementById("userbirth3").value;
+        const checkResult = document.getElementById("userbirth-check-result");
+        const exp = /^\d{2}$/;
+        if(userbirth3.match(exp) && userbirth3>0 && userbirth3<31){
+            checkResult.innerHTML = " ";
+        }
+        else{
+            if(userbirth3.length == 0){
+                checkResult.innerHTML = "필수 입력입니다.";
+                checkResult.style.color = "red";
+            }
+            else{
+                checkResult.innerHTML = "세번째 입력란에 1~31 사이의 숫자를 두자릿수로 입력하세요.";
+                checkResult.style.color = "red";
+            }
+        }
+    }
+    function usergenderSelect(){
+        const usergender = document.getElementById("usergender").value;
+        console.log(`${usergender}`);
+    }
+    function useremailCheck(){
+        const useremail = document.getElementById("useremail").value;
+        console.log(`${useremail}`);
+    }
+    function usermobileCheck(){
+        const usermobile = document.getElementById("usermobile").value;
+        const exp = /^\d{3}-\d{4}-\d{4}$/;
+        const checkResult = document.getElementById("usermobile-check-result");
+        if(usermobile.match(exp)){
+            checkResult.innerHTML = "사용가능한 전화번호입니다.";
+            checkResult.style.color = "green";
+        }
+        else{
+            if(usermobile.length == 0){
+                checkResult.innerHTML = "필수 입력입니다.";
+                checkResult.style.color = "red";
+            }
+            else{
+                checkResult.innerHTML = "숫자로 된'OOO-OOOO-OOOO'구조가 아닙니다.";
+                checkResult.style.color = "red";
+            }
+        }
+    }
 </script>
 </html>
