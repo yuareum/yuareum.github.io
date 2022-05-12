@@ -5,13 +5,39 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
+  <style>
+  body {
+    min-height: 100vh;
+    background: -webkit-gradient(linear, left bottom, right top, from(#738bda), to(#29b1c9));
+    background: -webkit-linear-gradient(bottom left, #738bda 0%, #29b1c9 100%);
+    background: -moz-linear-gradient(bottom left, #738bda 0%, #29b1c9 100%);
+    background: -o-linear-gradient(bottom left, #738bda 0%, #29b1c9 100%);
+    background: linear-gradient(to top right, #738bda 0%, #29b1c9 100%);
+    }
+    .container{
+    max-width: 100x;
+    margin-top: 80px;
+    padding: 80px;
+    background: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 20px 0 rgba(60, 241, 15, 0);
+    -moz-box-shadow: 0 8px 20px 0  rgba(60, 241, 15, 0);
+    box-shadow: 0 8px 20px 0  rgba(60, 241, 15, 0);
+    }
+    .id {
+      font-size: 50px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <div>
-    <h2>Login</h2>
-    아이디 <input type="text" id="userId" onblur="userId()">
+  <div class="container">
+    <h2 calss="id">Login</h2>
+    <div class="item">아이디 <input type="text" id="userId" onblur="userId()"></div>
     <p id="userIdCheck"></p>
-    비밀번호 <input type="password" id="userpassword" onblur="userpassword()">
+    <div class="item">비밀번호 <input type="password" id="userpassword" onblur="userpassword()"></div>
     <p id="userpasswordCheck"></p>
     <button class="btn btn-primary" type="submit">로그인</button>
   </div>
@@ -20,24 +46,38 @@
   function userId(){
     const userId = document.getElementById("userId").value;
     const checkResult = document.getElementById("userIdCheck");
-    if(userId.length == 0){
-      checkResult.innerHTML = "아이디를 입력해주세요.";
-      checkResult.style.color = "red";
+    const exp = /^[a-z\d-_]{5,20}$/;
+    if(userId.match(exp)){
+      checkResult.innerHTML = "";
     }
     else{
-      checkResult.innerHTML = " ";
+      if(userId.length == 0){
+        checkResult.innerHTML = "아이디를 입력해주세요.";
+        checkResult.style.color = "red";
+      }
+      else{
+        checkResult.innerHTML = "5~20글자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능 합니다.";
+        checkResult.style.color = "red";
+      }
     }
   }
 
   function userpassword(){
     const userpassword = document.getElementById("userpassword").value;
     const checkResult = document.getElementById("userpasswordCheck");
-    if(userpassword.length == 0){
-      checkResult.innerHTML = "비밀번호를 입력해주세요.";
-      checkResult.style.color = "red";
+    const exp = /^[a-z\d-_!#$A-Z]{8,16}$/;
+    if(userpassword.match(exp)){
+      checkResult.innerHTML = "";
+
     }
     else{
-      checkResult.innerHTML = "";
+      if(userpassword.length == 0){
+        checkResult.innerHTML = "비밀번호를 입력해주세요.";
+        checkResult.style.color = "red";
+      }
+      else{
+        checkResult.innerHTML = "";
+      }
     }
   }
 </script>
