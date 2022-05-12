@@ -10,7 +10,7 @@
     
   <style>
     body{
-      background-color: #29b1c9 100%;
+      background-color: #cff0f6 ;
     }
     .container{
     max-width: 100x;
@@ -35,15 +35,14 @@
 </head>
 <body> 
   <div class="container">
-    <h2 calss="login">Login</h2>
-    <form>
-    <div class="form-outline mb-4">아이디 <input type="text" id="userId" onblur="userId()"></div>
-    <p id="userIdCheck"></p>
-    <div class="form-outline mb-4">비밀번호 <input type="password" id="userpassword" onblur="userpassword()"></div>
-    <p id="userpasswordCheck"></p>
-    </form>
-    <button type="button" class="btn btn-secondary">처음으로</button>
-    <button class="btn btn-primary" type="submit">로그인</button>
+  <h2 calss="login">Login</h2>
+  <div> 아이디<br> </i> <i style="color:gray" class="bi bi-person-circle"></i><input type="text" id="userId" placeholder="아이디입력" onblur="userId()">
+  <p id="userIdCheck"></p>
+  비밀번호<br> <input type="password" id="userpassword" placeholder="비밀번호입력" onblur="userpassword()">
+  <p id="userpasswordCheck"></p>
+  </div>
+  <button type="button" class="btn btn-secondary">처음으로</button>
+  <button class="btn btn-primary" type="submit">로그인</button>
   </div>
 </body>
 <script>
