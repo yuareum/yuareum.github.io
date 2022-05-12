@@ -30,15 +30,16 @@
         
         }
         .mb-3{
-            font-weight: 20px; 
-            font-family: bold;
+            font-weight: 30px;
+            font-size: 40px; 
+            font-family: 굵은돋움;
             text-align: center;
         }
     </style>
 </head>
 <body>
     <div class ="container">
-    <div "text-center text-white pt-5">회원가입</div>
+    <div class="mb-3">회원가입</div>
     아이디<br>
     <input type="text" id="userId" onblur="userIdCheck()" placeholder="아이디를 입력해주세요." style="width:500px; height:30px;font-size:15px;"><i id="userIdCheck" style="color:gray" class="bi bi-check-lg"></i>
     <p id="userId-check-result"></p>
@@ -90,7 +91,7 @@
     <input type="text" id="sample6_detailAddress" placeholder="상세주소"style="width:300px; height:30px;font-size:15px;">
     <input type="text" id="sample6_extraAddress" placeholder="참고항목"style="width:190px; height:30px;font-size:15px;"><br><br>
     <button type="button" class="btn btn-secondary">처음으로</button>
-    <button type="button" class="btn btn-primary" onclick="button2">회원가입</button>
+    <button type="button" class="btn btn-primary" >회원가입</button>
     </div> 
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
