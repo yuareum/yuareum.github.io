@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <div>
+    <h2>Login</h2>
+    아이디 <input type="text" id="userId" onblur="userId()">
+    <p id="userIdCheck"></p>
+    비밀번호 <input type="password" id="userpassword" onblur="userpassword()">
+    <p id="userpasswordCheck"></p>
+    <button class="btn btn-primary" type="submit">로그인</button>
+  </div>
+</body>
+<script>
+  function userId(){
+    const userId = document.getElementById("userId").value;
+    const checkResult = document.getElementById("userIdCheck");
+    if(userId.length == 0){
+      checkResult.innerHTML = "아이디를 입력해주세요.";
+      checkResult.style.color = "red";
+    }
+    else{
+      checkResult.innerHTML = " ";
+    }
+  }
+
+  function userpassword(){
+    const userpassword = document.getElementById("userpassword").value;
+    const checkResult = document.getElementById("userpasswordCheck");
+    if(userpassword.length == 0){
+      checkResult.innerHTML = "비밀번호를 입력해주세요.";
+      checkResult.style.color = "red";
+    }
+    else{
+      checkResult.innerHTML = "";
+    }
+  }
+</script>
+</html>
