@@ -30,9 +30,8 @@
         
         }
         .mb-3{
-            font-weight: 30px;
-            font-size: 40px; 
-            font-family: 굵은돋움;
+            font-weight: bold;
+            font-size: 40px;
             text-align: center;
         }
     </style>  
@@ -41,31 +40,31 @@
     <div class ="container">
     <div class="mb-3">Signup</div>
     아이디<br>
-    <input type="text" id="userId" onblur="userIdCheck()" placeholder="아이디를 입력해주세요." style="width:500px; height:35px;font-size:15px;"><i id="userIdCheck" style="color:gray" class="bi bi-check-lg"></i>
+    <input type="text" id="userId" onblur="userIdCheck()" placeholder="아이디를 입력해주세요." style="width:490px; height:35px;font-size:15px;"> <i id="userIdCheck" style="color:gray ;" class="bi bi-check-lg"></i>
     <p id="userId-check-result" style="font-size: 12px;"></p>
     비밀번호<br>
-    <input type="password" id="userpw1" onblur="userpw1Check()"  placeholder="비밀번호를 입력해주세요." style="width:500px; height:35px;font-size:15px;"><i id="userpw1Lock" style ="color:gray" class="bi bi-file-lock2"></i>
+    <input type="password" id="userpw1" onblur="userpw1Check()"  placeholder="비밀번호를 입력해주세요." style="width:490px; height:35px;font-size:15px;"> <i id="userpw1Lock" style ="color:gray;" class="bi bi-file-lock2"></i>
     <p id="userpw1-check-result" style="font-size: 12px;"></p>
     비밀번호 재확인<br>
-    <input type="password" id="userpw2" onblur="userpw2Check()"  placeholder="비밀번호를 다시 입력해주세요." style="width:500px; height:35px;font-size:15px;"><i id="userpw2Lock" style ="color:gray"class="bi bi-file-lock2"></i>
+    <input type="password" id="userpw2" onblur="userpw2Check()"  placeholder="비밀번호를 다시 입력해주세요." style="width:490px; height:35px;font-size:15px;"> <i id="userpw2Lock" style ="color:gray;"class="bi bi-file-lock2"></i>
     <p id="userpw2-check-result" style="font-size: 12px;"></p>
     이름<br>
-    <input type="text" id="username" onblur="usernameCheck()"  placeholder="이름을 입력해주세요."style="width:500px; height:35px; font-size:15px;">
+    <input type="text" id="username" onblur="usernameCheck()"  placeholder="이름을 입력해주세요."style="width:490px; height:35px; font-size:15px;">
     <p id="username-check-result" style="font-size: 12px;"></p>
     생년월일<br>
-    <input type="text" id="userbirth1" placeholder="년도(4자)" onblur="userbirthCheck1()"style="width:170px; height:35px; font-size:15px;">
+    <input type="text" id="userbirth1" placeholder="년도(4자)" onblur="userbirthCheck1()"style="width:160px; height:35px; font-size:15px;">
     <input type="text" id="userbirth2" onblur="userbirthCheck2()" placeholder="월(2자)"style="width:160px; height:35px;font-size:15px;">
     <input type="text" id="userbirth3" onblur="userbirthCheck3()" placeholder="일(2자)" style="width:160px; height:35px;font-size:15px;">
     <p id="userbirth-check-result" style="font-size: 12px;"></p>
     성별<br>
-    <select id ="usergender"  style="width:500px; height:35px;font-size:13px;" onchange="usergenderSelect()">
+    <select id ="usergender"  style="width:490px; height:35px;font-size:13px;" onchange="usergenderSelect()">
         <option selected value= " ">성별</option>
         <option value="남자">남자</option>
         <option value="여자">여자</option>
     </select><br>
     <p id="usergender-check-result" style="font-size: 12px;" ></p>
     본인 확인 이메일<br>
-    <input type="text" id="useremail1" placeholder="아이디입력" onblur="useremailCheck()"style="width:190px; height:35px;font-size:15px;">@<input type="text" placeholder="도메인입력" id="useremail2" style="width:190px; height:35px;font-size:15px;">
+    <input type="text" id="useremail1" placeholder="아이디입력" onblur="useremailCheck()"style="width:170px; height:35px;font-size:15px;">@<input type="text" placeholder="도메인입력" id="useremail2" style="width:200px; height:35px;font-size:15px;">
     <select id="domain" onchange="useremailSelect()">
         <option value="">직접입력</option>
         <option value="naver.com">naver.com</option>
@@ -82,14 +81,14 @@
         <option value="018">018</option>        
         <option value="019">019</option>        
     </select>
-    <input type="text" id="usermobile2" placeholder ="휴대전화 뒤의 8자리 입력(-제외)"onblur="usermobileCheck()"style="width:400px; height:35px;font-size:15px;">
+    <input type="text" id="usermobile2" placeholder ="휴대전화 뒤의 8자리 입력(-제외)"onblur="usermobileCheck()"style="width:385px; height:35px;font-size:15px;"> <i id="usermobileCheck" style="color:gray;" class="bi bi-check-lg"></i>
     <p id="usermobile-check-result" style="font-size: 12px;"></p>
     주소<br>
     <input type="text"  id="sample6_postcode" placeholder="우편번호">
     <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-    <input type="text" id="sample6_address" placeholder="주소"style="width:500px; height:35px;font-size:15px;"><br>
+    <input type="text" id="sample6_address" placeholder="주소"style="width:490px; height:35px;font-size:15px;"><br>
     <input type="text" id="sample6_detailAddress" placeholder="상세주소"style="width:300px; height:35px;font-size:15px;">
-    <input type="text" id="sample6_extraAddress" placeholder="참고항목"style="width:190px; height:35px;font-size:15px;"><br><br>
+    <input type="text" id="sample6_extraAddress" placeholder="참고항목"style="width:185px; height:35px;font-size:15px;"><br><br>
     <button type="button" class="btn btn-secondary" onclick="link()">처음으로</button>
     <button type="button" class="btn btn-primary" onclick="signup()">회원가입</button>
     </div> 
@@ -102,7 +101,7 @@
         const checkUserId = document.getElementById("userIdCheck");
         const exp = /^[a-z\d-_]{5,20}$/;
         if(userId.match(exp)){
-            checkResult.innerHTML = "사용가능한 아이디입니다.";
+            checkResult.innerHTML = "사용가능한 아이디입니다."; 
             checkResult.style.color = "green";
             checkUserId.style.color = "green";
         }
@@ -261,20 +260,24 @@
     }
     function usermobileCheck(){
         const usermobile2 = document.getElementById("usermobile2").value;
+        const usermobileCheck = document.getElementById("usermobileCheck");
         const exp = /^(\d{8})$/;
         const checkResult = document.getElementById("usermobile-check-result");
         if(usermobile2.match(exp)){
             checkResult.innerHTML = "사용가능한 전화번호입니다.";
             checkResult.style.color = "green";
+            usermobileCheck.style.color="green";
         }
         else{
             if(usermobile2.length == 0){
                 checkResult.innerHTML = "필수 입력입니다.";
                 checkResult.style.color = "red";
+                usermobileCheck.style.color="red";
             }
             else{
                 checkResult.innerHTML = "숫자로 된 8자리가 아닙니다.";
                 checkResult.style.color = "red";
+                usermobileCheck.style.color="red";
             }
         }
     }
