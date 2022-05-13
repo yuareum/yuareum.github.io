@@ -20,7 +20,7 @@
         max-width: 680px;
         margin-top: 80px;
         padding: 80px;
-        background: white;
+        background-color: white;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
@@ -31,16 +31,16 @@
         }
         .mb-3{
             font-weight: bold;
-            font-size: 40px;
+            font-size: 30px;
             text-align: center;
         }
     </style>  
 </head>
 <body>
     <div class ="container">
-    <div class="mb-3">Signup</div>
+    <div class="mb-3">회원가입</div>
     아이디<br>
-    <input type="text" id="userId" onblur="userIdCheck()" placeholder="아이디를 입력해주세요." style="width:490px; height:35px;font-size:15px;"> <i id="userIdCheck" style="color:gray ;" class="bi bi-check-lg"></i>
+    <input type="text" id="userId" onblur="userIdCheck()" placeholder="아이디를 입력해주세요." style="width:490px; height:35px;font-size:15px; "> <i id="userIdCheck" style="color:gray ;" class="bi bi-check-lg"></i>
     <p id="userId-check-result" style="font-size: 12px;"></p>
     비밀번호<br>
     <input type="password" id="userpw1" onblur="userpw1Check()"  placeholder="비밀번호를 입력해주세요." style="width:490px; height:35px;font-size:15px;"> <i id="userpw1Lock" style ="color:gray;" class="bi bi-file-lock2"></i>
@@ -81,7 +81,7 @@
         <option value="018">018</option>        
         <option value="019">019</option>        
     </select>
-    <input type="text" id="usermobile2" placeholder ="휴대전화 뒤의 8자리 입력(-제외)"onblur="usermobileCheck()"style="width:385px; height:35px;font-size:15px;"> <i id="usermobileCheck" style="color:gray;" class="bi bi-check-lg"></i>
+    <input type="text" id="usermobile2" placeholder ="휴대전화 뒤의 8자리 입력(-제외)" onblur="usermobileCheck()"style="width:385px; height:35px;font-size:15px;"> <i id="usermobileCheck" style="color:gray;" class="bi bi-check-lg"></i>
     <p id="usermobile-check-result" style="font-size: 12px;"></p>
     주소<br>
     <input type="text"  id="sample6_postcode" placeholder="우편번호">
@@ -89,8 +89,8 @@
     <input type="text" id="sample6_address" placeholder="주소"style="width:490px; height:35px;font-size:15px;"><br>
     <input type="text" id="sample6_detailAddress" placeholder="상세주소"style="width:300px; height:35px;font-size:15px;">
     <input type="text" id="sample6_extraAddress" placeholder="참고항목"style="width:185px; height:35px;font-size:15px;"><br><br>
-    <button type="button" class="btn btn-secondary" onclick="link()">처음으로</button>
-    <button type="button" class="btn btn-primary" onclick="signup()">회원가입</button>
+    <button type="button" class="btn btn-secondary btn-lg" onclick="link()">처음으로</button>
+    <button type="button" class="btn btn-primary btn-lg" onclick="signup()">가입하기</button>
     </div> 
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
