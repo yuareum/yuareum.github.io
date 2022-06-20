@@ -42,19 +42,19 @@
 </head>
 <body> 
   <div class="container">
-  <h2 class="login">Login</h2>
-  <br>
-  <div style="font-size: 15px;">로그인 정보를 입력해주세요</div>
-  <div><input type="text" class="form-control" style="width:320px; height:45px"   id="userId" placeholder="아이디입력">
-  <input type="password" class="form-control" style="width:320px; height:45px"  id="userpassword" placeholder="비밀번호입력"> 
-  </div>
-  <div class="check mb-3">
-  <label>
-    <input type="checkbox" value="remember-me"> Remember me
-  </label>
-  </div>
-  <a id="loginCheck" style="font-size: 12px;"></a>
-  <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="loginCheck()">로그인</button>
+    <h2 class="login">Login</h2>
+    <br>
+    <div style="font-size: 15px;">로그인 정보를 입력해주세요</div>
+    <div><input type="text" class="form-control" style="width:320px; height:45px"   id="userId" placeholder="아이디입력">
+    <input type="password" class="form-control" style="width:320px; height:45px"  id="userpassword" placeholder="비밀번호입력"> 
+    </div>
+    <div class="check mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+    </div>
+    <a id="loginCheck" style="font-size: 12px;"></a>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="loginCheck()">로그인</button>
   </div>
 </body>
 <script>
@@ -69,9 +69,6 @@
     else if(userpassword.length == 0){
       loginCheck.innerHTML = "비밀번호를 입력해주세요.";
       loginCheck.style.color = "red";
-    }
-    else{
-      location.href = "https://yuareum.github.io";
     }
   }
 </script>
